@@ -8,9 +8,9 @@ Q. create an express app named `user-diary` from scratch
 - create users router to handle routes for below tasks.
 - handle the following routes inside users router:
   - list users
-  - get single user details
-  - new user form
-  - delete user
+  - Get single user details
+  - New user form
+  - Delete user
   - update user
 
 Handle above routes by rendering an appropriate template on webpages for them.
