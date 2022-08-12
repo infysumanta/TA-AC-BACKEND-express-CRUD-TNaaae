@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="flex">
+        <a href="/users" class="btn btn-primary"> Users List</a>
+        <a href="/users" class="btn btn-primary"> Back</a>
+      </div>
+      <form action="/users/<%= user.id %>" method="post">
+        <h2>Add New User</h2>
+        <input type="text" name="name" placeholder="Enter Name" value="<%= user.name %>" />
+        <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" />
+        <input type="number" name="age" placeholder="Enter your Age" value="<%= user.age %>" />
+        <input type="text" name="address" placeholder="Enter your Address" value="<%= user.address %>" />
+        <input type="text" name="bio" placeholder="Enter your Bio" value="<%= user.bio %>" />
+        <input type="text" name="hobbies" placeholder="Enter your Hobbies" value="<%= user.hobbies %>" />
+        <button type="submit" name="submit" class="btn btn-success">Update User</button>
+      </form>
+    </div>
+  </body>
+
+</html>
