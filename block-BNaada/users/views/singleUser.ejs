@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="flex">
+        <a href="/" class="btn btn-primary"> Users </a>
+        <a href="/users/new" class="btn btn-secondary">Add new User</a>
+      </div>
+
+      <div class="info text-center">
+        <h1>User Detail</h1>
+        <div>Name: <%= user.name %>
+        </div>
+        <div>Email: <%= user.email %>
+        </div>
+        <div>Age: <%= user.age %>
+        </div>
+        <div>Gender: <%= user.gender %>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
