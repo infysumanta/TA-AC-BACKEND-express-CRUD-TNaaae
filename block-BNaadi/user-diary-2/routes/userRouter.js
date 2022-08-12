@@ -8,44 +8,33 @@ router.get("/new", (req, res) => {
 
 router.post("/", (req, res, next) => {
   User.create(req.body, (err, createduser) => {
-    console.log(req.body);
     if (err) {
       return next(err);
     }
-    res.redirect("/listUsers");
+    res.redirect("/users");
   });
 });
 
-router.get("/", (req, res) => {
+router.get("/", (req, res, next) => {
   User.find({}, (err, users) => {
     if (err) return next(err);
-    res.render("users.ejs", { users: users });
+    res.render("listUsers.ejs", { users: users });
   });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", (req, res, next) => {
   var id = req.params.id;
   User.findById(id, (err, user) => {
     if (err) return next(err);
-
-    console.log(user);
-    res.render("singleUser", { user: user });
+    res.render("singleUser", { user });
   });
 });
 
-router.get("/:id/edit", (req, res) => {
-  var id = req.params.id;
-  User.findById(id, (err, user) => {
-    if (err) return next(err);
-    res.render("editUserForm", { user: user });
-  });
-});
-
-router.put("/:id", (req, res) => {
+router.put("/:id", (req, res, next) => {
   var id = req.params.id;
   User.findByIdAndUpdate(id, req.body, (err, updatedUser) => {
     if (err) return next(err);
-    res.redirect("/users/" + id);
+    res.redirect("/users");
   });
 });
 
